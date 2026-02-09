@@ -1,0 +1,46 @@
+name: Generate file list
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate files.json
+        run: |
+          cd savedpages
+          python3 -c "
+          import os, json
+
+          files = []
+          for entry in sorted(os.listdir('.')):
+              if entry in ('index.html', 'files.json'):
+                  continue
+              info = {
+                  'name': entry,
+                  'size': os.path.getsize(entry) if os.path.isfile(entry) else None,
+                  'type': 'dir' if os.path.isdir(entry) else 'file'
+              }
+              files.append(info)
+
+          with open('files.json', 'w') as f:
+              json.dump(files, f, indent=2)
+
+          print(f'Generated files.json with {len(files)} entries')
+          "
+
+      - name: Commit files.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add savedpages/files.json
+          git diff --cached --quiet || git commit -m "Update files.json"
+          git push
