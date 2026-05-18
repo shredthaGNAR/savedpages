@@ -1,0 +1,78 @@
+<!DOCTYPE html> <html lang=en autocopy=true><!--
+ Page saved with SingleFile 
+ url: file:///Users/lucmckay/Downloads/dictionsry-lookup-v2.html 
+ saved date: Mon May 18 2026 15:15:02 GMT-0700 (Pacific Daylight Time)
+--><meta charset=utf-8>
+<title>AI Dictionary Lookup v2 | file:///Users/lucmckay/Downloads/dictionsry-lookup-v2.html</title>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<style>:root{color-scheme:dark;--bg:rgba(18,20,25,0.74);--panel:rgba(28,31,38,0.78);--panel-2:rgba(38,42,52,0.86);--text:#eef2f7;--muted:#9aa6b2;--accent:#8dcbff;--accent2:#b79cff;--good:#7ee787;--warn:#ffbf69;--error:#ff8e8e;--border:rgba(255,255,255,.09);--shadow:0 20px 60px rgba(0,0,0,.35);--radius:18px}*{box-sizing:border-box}html,body{margin:0;padding:0;background:transparent;color:var(--text);font:14px/1.5 -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}body{padding:12px}.window{backdrop-filter:blur(24px) saturate(1.35);-webkit-backdrop-filter:blur(24px) saturate(1.35);background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}.header{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--border);background:linear-gradient(to bottom,rgba(255,255,255,.04),rgba(255,255,255,.01))}.traffic{display:flex;gap:7px;align-items:center}.dot{width:11px;height:11px;border-radius:50%}.dot.red{background:#ff5f57}.dot.yellow{background:#febc2e}.dot.green{background:#28c840}.titleWrap{display:flex;flex-direction:column;min-width:0;flex:1;margin-left:4px}.title{font-size:13px;font-weight:700;color:#f7f9fb}.subtitle{font-size:11px;color:var(--muted)}.status{font-size:12px;color:var(--muted);white-space:nowrap}.content{padding:14px}.term{font-size:30px;line-height:1.08;font-weight:800;letter-spacing:-0.025em;margin:0 0 6px;word-break:break-word}.meta{color:var(--muted);margin-bottom:12px;min-height:20px}.segmented{display:inline-flex;gap:6px;padding:4px;border:1px solid var(--border);border-radius:13px;background:rgba(255,255,255,.03);margin-bottom:12px;flex-wrap:wrap}.seg-btn{border:0;background:transparent;color:var(--muted);border-radius:9px;padding:7px 11px;cursor:pointer;font:inherit}.seg-btn.active{background:var(--panel-2);color:var(--text);box-shadow:inset 0 0 0 1px rgba(255,255,255,.05)}.modebar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.mode-chip{display:inline-flex;align-items:center;gap:6px;padding:7px 11px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--text);cursor:pointer;user-select:none;transition:all .12s ease}.mode-chip.active{border-color:rgba(141,203,255,.35);background:rgba(141,203,255,.12);color:var(--accent)}.section{margin-top:14px;padding-top:14px;border-top:1px solid var(--border)}.section h3{margin:0 0 10px;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);font-weight:700}.small{font-size:12px;color:var(--muted)}.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}button,a.button{appearance:none;border:1px solid var(--border);background:linear-gradient(to bottom,rgba(255,255,255,.06),rgba(255,255,255,.03));color:var(--text);border-radius:11px;padding:8px 11px;font:inherit;cursor:pointer;text-decoration:none}button.primary{border-color:rgba(141,203,255,.28);background:linear-gradient(to bottom,rgba(141,203,255,.16),rgba(141,203,255,.08))}button:disabled{opacity:.45;cursor:not-allowed}.empty{color:var(--muted)}.hidden{display:none}</style>
+<meta name=referrer content=no-referrer><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:; object-src 'self' data:; frame-src 'self' data:;"></head>
+<body>
+ <div class=window>
+ <div class=header>
+ <div class=traffic>
+ <div class="dot red"></div>
+ <div class="dot yellow"></div>
+ <div class="dot green"></div>
+ </div>
+ <div class=titleWrap>
+ <div class=title>AI Dictionary Lookup v2</div>
+ <div class=subtitle>Dictionary + multi-mode AI language assistant</div>
+ </div>
+ <div id=status class=status>Idle</div>
+ </div>
+ <div class=content>
+ <div id=term class=term>—</div>
+ <div id=meta class=meta>No valid selection found.</div>
+ <div class=segmented>
+ <button class="seg-btn active" data-tab=dictionary>Dictionary</button>
+ <button class=seg-btn data-tab=ai>AI</button>
+ </div>
+ <div id=dictionaryTab>
+ <div id=dictPhoneticsSection class="section hidden">
+ <h3>Phonetics</h3>
+ <div id=dictPhonetics></div>
+ </div>
+ <div id=dictDefinitionsSection class="section hidden">
+ <h3>Definitions</h3>
+ <div id=dictDefinitions></div>
+ </div>
+ <div id=dictSynonymsSection class="section hidden">
+ <h3>Dictionary Synonyms</h3>
+ <div id=dictSynonyms></div>
+ </div>
+ </div>
+ <div id=aiTab class=hidden>
+ <div class=modebar>
+ <button class="mode-chip active" data-mode=explain>Explain</button>
+ <button class=mode-chip data-mode=eli5>ELI5</button>
+ <button class=mode-chip data-mode=synonyms>Synonyms</button>
+ <button class=mode-chip data-mode=rewrite>Rewrite Simply</button>
+ <button class=mode-chip data-mode=sentence>Use in Sentence</button>
+ </div>
+ <div class=section>
+ <h3>AI Result</h3>
+ <div id=aiContent class=empty>No AI response yet.</div>
+ </div>
+ </div>
+ <div class=section>
+ <h3>Actions</h3>
+ <div class=row>
+ <button id=refreshBtn>Refresh</button>
+ <button id=rerunBtn class=primary disabled>Run Current Mode</button>
+ <button id=copyWordBtn disabled>Copy Word</button>
+ <button id=copyAiBtn disabled>Copy AI</button>
+ <a id=searchBtn class=button href=# target=_blank rel="noopener noreferrer">Search Web</a>
+ </div>
+ <div class=small style=margin-top:10px>
+ AI auto-runs on selection change. Click green suggestion chips to insert them back into the active app.
+ </div>
+ </div>
+ </div>
+ </div>
+ 
+<div id=save-to-obsidian-btn style=display:flex data-state=idle data-tooltip="Save to Obsidian" title="Save to Obsidian" aria-label="Save to Obsidian" data-anchor=right-bottom data-mode=peek>
+ <svg xmlns=http://www.w3.org/2000/svg viewBox="0 0 100 100" width=24 height=24>
+ <path d="M50 3L3 25v50l47 22 47-22V25L50 3zm0 10l35 16v42L50 87 15 71V29l35-16z"></path>
+ </svg>
+ </div><div class=altq-root><div class=qr-toast></div></div><div class="autocopy-notification hide"><p class=autocopy-notification-title>AutoCopy</p></div>
